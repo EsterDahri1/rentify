@@ -32,3 +32,9 @@ User::factory()->create()
 > $user->save();
 = true
 ```
+
+## come vedere se si sono rotte le cose
+```bash
+php artisan test
+```
+attenzione perchè cancella tutto il database
