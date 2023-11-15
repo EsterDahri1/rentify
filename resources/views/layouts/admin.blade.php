@@ -92,7 +92,27 @@
         </nav>
 
         <main class="">
-            @yield('content')
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <nav class="nav nav-tabs flex-column">
+                                    <a class="nav-link active" href="{{ route('admin.dashboard') }}"
+                                        aria-current="page">{{ __('Dashboard') }}</a>
+                                    <a class="nav-link active" href="{{ route('admin.cars.index') }}"
+                                        aria-current="page">{{ __('Cars') }}</a>
+                                    <a class="nav-link" href="#">Link</a>
+                                    <a class="nav-link disabled" href="#">Disabled link</a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>

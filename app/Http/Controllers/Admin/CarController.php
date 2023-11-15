@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Ad;
 
 use App\Models\Car;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\DashboardController;
 
 class CarController extends Controller
 {
@@ -14,7 +15,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.cars.index', ['cars' => Car::all()]);
     }
 
     /**
@@ -22,7 +23,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.cars.create');
     }
 
     /**
@@ -38,7 +39,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        //
+        return view('admin.cars.show', compact($car));
     }
 
     /**
