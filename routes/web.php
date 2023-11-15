@@ -20,7 +20,30 @@ Route::get('/', function () {
 
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/cars', CarController::class);
 });
+
+/*
+Models:
+-Car
+-Costumer 
+-Category 
+-Features
+-Booking
+
+Migrations:
+-cars
+-categories
+-features
+
+
+-VehiclesController
+-vehicles migration
+-vehiclesSeeder
+
+
+
+*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
